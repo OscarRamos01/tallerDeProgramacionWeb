@@ -84,6 +84,10 @@ img {
 
 }
 
+.contenido  {
+  text-align: justify;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -92,6 +96,11 @@ table {
 td {
   padding: 10px;
   vertical-align: top;
+  text-align: center;
+}
+
+.titulo {
+  text-align: center;
 }
 
 label {
