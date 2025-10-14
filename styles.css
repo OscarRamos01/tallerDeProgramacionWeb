@@ -1,19 +1,44 @@
+/* VARIABLES GLOBALES */
+:root {
+  --font-primary: 'Poppins', sans-serif;  /* Títulos, encabezados */
+  --font-secondary: 'Roboto', sans-serif; /* Texto general */
+  --color-bg: #f9f9f9;
+  --color-dark: #2c3e50;
+  --color-accent: #1abc9c;
+  --color-light: #ffffff;
+}
+
+/* BASE */
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-secondary);
   margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f9f9f9;
+  background: var(--color-bg);
 }
+
+  h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h2{
+        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+  }
+
+  h3{
+        font-size: clamp(1rem, 2vw, 3rem);
+  }
+
 
 /* HEADER */
 header {
-  background: #2c3e50;
-  color: white;
+  background: var(--color-dark);
+  color: var(--color-light);
   text-align: center;
   padding: 1rem;
-}
+}s
 
 header .logo {
   display: flex;
@@ -25,6 +50,10 @@ header .logo {
 header .logo img {
   width: 50px;
   height: 50px;
+}
+
+header h1 {
+  font-family: var(--font-primary);
 }
 
 header .slogan {
@@ -43,7 +72,7 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--color-light);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -51,7 +80,7 @@ nav a {
 }
 
 nav a:hover {
-  background: #1abc9c;
+  background: var(--color-accent);
 }
 
 /* CONTENIDO */
@@ -67,141 +96,99 @@ main {
   background: #f0f0f0;
   padding: 1rem;
   border-radius: 10px;
-}
-
-img {
-  padding: 10px;
+  font-family: var(--font-secondary);
 }
 
 .icom {
   height: 1.5rem;
   width: 1.5rem;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
-.portada {
-  height: 14rem;
-  width: 10rem;
-
-}
-
-.contenido  {
-  text-align: justify;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td {
-  padding: 10px;
-  vertical-align: top;
-  text-align: center;
-}
-
-.titulo {
-  text-align: center;
-  padding: 10px;
-}
-
-label {
-  font-weight: bold;
-  color: #333;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.submit-btn {
-  background: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 15px;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  background: #45a049;
-}
-
-aside {
-  flex: 1;
-  background: #eaeaea;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-/* NOVEDADES Y DESTACADOS */
+/* CARDS */
 .card {
-  background: white;
+  background: var(--color-light);
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* GRID DE LIBROS */
 .libros-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.libro {
-  background: white;
-  padding: 20px;
+.libro-item {
+  background: var(--color-light);
+  padding: 10px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.libro-item:hover {
+  transform: translateY(-10px);
+}
+
+.libro-item p {
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+/* IMÁGENES */
+.portada {
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+#libros picture, 
+#libros img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ASIDE */
+aside {
+  flex: 1;
+  background: #eaeaea;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-secondary);
 }
 
 /* FOOTER */
 footer {
-  background: #2c3e50;
-  color: white;
+  background: var(--color-dark);
+  color: var(--color-light);
   text-align: center;
   padding: 1rem;
 }
 
-footer .social {
-  margin-top: 8px;
+footer i {
+  margin: 10px;
+  font-size: 30px;
+  color: var(--color-light);
 }
 
-footer a {
-  color: #1abc9c;
-  text-decoration: none;
-}
-
-/* RESPONSIVIDAD */
+/* RESPONSIVO */
 @media (max-width: 768px) {
   .contenido {
     flex-direction: column;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: center;
+  .libros-grid {
+    grid-template-columns: 1fr;
   }
 }
