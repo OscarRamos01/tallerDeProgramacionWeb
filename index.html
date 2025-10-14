@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Librería Ramos</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta name="description" content="Página web de libros.">
+
+  <!-- Tipografías externas -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -21,7 +29,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html">Inicio</a>    
+    <a href="index.html">Inicio</a>
     <a href="catalog.html">Catálogo</a>
     <a href="services.html">Servicios</a>
     <a href="events.html">Eventos</a>
@@ -36,14 +44,13 @@
         <h2><img class="icom" src="images/librosColor.png" alt="Logo Librería"> Novedades</h2>
         <div class="card">
           <h3>El libro destacado del mes</h3>
-          <p></p>
 
           <iframe width="560" height="315" src="https://www.youtube.com/embed/YVvFjOLetE4?si=Su5KkVs_jWwrw1Ts"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
         </div>
+
         <div class="card">
           <h3>Promoción especial</h3>
           <p>50% de descuento en literatura clásica hasta fin de mes.</p>
@@ -53,28 +60,33 @@
       <section class="destacados">
         <h2><img class="icom" src="images/destacados.png" alt="icono destacados"> Libros Destacados</h2>
         <div class="libros-grid">
-          <table>
-            <tr>
-              <td>Libro 1 </td>
-              <td>Libro 2</td>
-              <td>Libro 3</td>
-            </tr>
-            <tr>
-              <td><img class="portada" src="images/libros/html5-css5.gif" alt="libro destacado 1"> </td>
-              <td><img class="portada" src="images/libros/don-quijote.jpg" alt="libro destacado 2"></td>
-              <td><img class="portada" src="images/libros/java.jpeg" alt="libro destacado 3"></td>
-            </tr>
-            <tr>
-              <td>Libro 4 </td>
-              <td>Libro 5</td>
-              <td>Libro 6</td>
-            </tr>
-            <tr>
-              <td><img class="portada" src="images/libros/mago-de-oz.jpg" alt="libro destacado 4"> </td>
-              <td><img class="portada" src="images/libros/php-mysql.gif" alt="libro destacado 5"></td>
-              <td><img class="portada" src="images/libros/viaje-centro-tierra.jpg" alt="libro destacado 6"></td>
-            </tr>
-          </table>
+          <div class="libro-item">
+            <p>Libro 1</p>
+            <picture>
+              <source srcset="images/libros/html5-css5.webp" type="image/webp">
+              <source srcset="images/libros/html5-css5.gif" type="image/gif">
+          </picture>
+          </div>
+          <div class="libro-item">
+            <p>Libro 2</p>
+            <img class="portada" src="images/libros/don-quijote.jpg" alt="Don Quijote">
+          </div>
+          <div class="libro-item">
+            <p>Libro 3</p>
+            <img class="portada" src="images/libros/java.jpeg" alt="Libro de Java">
+          </div>
+          <div class="libro-item">
+            <p>Libro 4</p>
+            <img class="portada" src="images/libros/mago-de-oz.jpg" alt="El Mago de Oz">
+          </div>
+          <div class="libro-item">
+            <p>Libro 5</p>
+            <img class="portada" src="images/libros/php-mysql.gif" alt="PHP y MySQL">
+          </div>
+          <div class="libro-item">
+            <p>Libro 6</p>
+            <img class="portada" src="images/libros/viaje-centro-tierra.jpg" alt="Viaje al centro de la Tierra">
+          </div>
         </div>
       </section>
     </main>
@@ -107,12 +119,12 @@
       <img class="icom" src="images/email.png" alt="icono email"> contacto@libreriaramos.com
     </p>
     <div class="social">
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a>
+      <i class="fa-brands fa-facebook"></i> |
+      <i class="fa-brands fa-instagram"></i> |
+      <i class="fa-brands fa-x-twitter"></i> |
+      <i class="fa-brands fa-youtube"></i>
     </div>
   </footer>
 
 </body>
-
 </html>
