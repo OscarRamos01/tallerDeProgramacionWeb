@@ -1,44 +1,51 @@
-/* VARIABLES GLOBALES */
+/* Variables Globales  */
 :root {
-  --font-primary: 'Poppins', sans-serif;  /* Títulos, encabezados */
-  --font-secondary: 'Roboto', sans-serif; /* Texto general */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
   --color-bg: #f9f9f9;
   --color-dark: #2c3e50;
   --color-accent: #1abc9c;
   --color-light: #ffffff;
 }
 
-/* BASE */
+/* Tipografía */
 body {
   font-family: var(--font-secondary);
   margin: 0;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Asegura que el footer se pegue abajo (layout "sticky footer") */
   background: var(--color-bg);
 }
 
-  h1, h2, h3 {
-    font-weight: 600;
-    line-height: 1.2;
-  }
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+}
 
-  h2{
-        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
-  }
+h2 {
+  /* Fuente fluida: se ajusta entre 1.5rem y 3.5rem según el ancho de pantalla */
+  font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+}
 
-  h3{
-        font-size: clamp(1rem, 2vw, 3rem);
-  }
+h3 {
+  font-size: clamp(1rem, 2vw, 3rem);
+}
 
+.icom {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 5px;
+  vertical-align: middle;
+}
 
-/* HEADER */
+/* Estructura Principal */
 header {
   background: var(--color-dark);
   color: var(--color-light);
   text-align: center;
   padding: 1rem;
-}s
+}
 
 header .logo {
   display: flex;
@@ -61,17 +68,62 @@ header .slogan {
   margin-top: 5px;
 }
 
-/* NAV */
-nav {
+.contenido {
+  flex: 1; /* Ocupa todo el espacio vertical restante entre el header y el footer */
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+main {
+  flex: 2; /* 'main' ocupa 2/3 del espacio horizontal disponible */
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-secondary);
+}
+
+aside {
+  flex: 1; /* 'aside' ocupa 1/3 del espacio horizontal disponible */
+  background: #eaeaea;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-secondary);
+}
+
+footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  padding: 1rem;
+}
+
+footer i {
+  margin: 10px;
+  font-size: 30px;
+  color: var(--color-light);
+}
+
+/* Componentes */
+
+/* Navegación (Responsive) */
+.navbar {
   background: #34495e;
   padding: 0.5rem;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav a {
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.nav-links a {
   color: var(--color-light);
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -79,53 +131,20 @@ nav a {
   transition: background 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   background: var(--color-accent);
 }
 
-/* CONTENIDO */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px; /* opcional, esquinas redondeadas */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* opcional, efecto moderno */
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.menu-toggle {
+  display: none; /* Oculto en PC, se muestra en móvil (ver sección 5) */
+  background: none;
   border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.contenido {
-  flex: 1;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-main {
-  flex: 2;
-  background: #f0f0f0;
-  padding: 1rem;
-  border-radius: 10px;
-  font-family: var(--font-secondary);
-}
-
-.icom {
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 5px;
-  vertical-align: middle;
-}
-
-/* CARDS */
+/* Cards de Libros */
 .card {
   background: var(--color-light);
   padding: 1rem;
@@ -134,54 +153,16 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* GRID DE LIBROS */
 .libros-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de fracción igual (1fr) */
   gap: 2rem;
 }
 
-.libro-item {
-  background: var(--color-light);
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.libro-item:hover {
-  transform: translateY(-10px);
-}
-
-.libro-item p {
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-
-/* IMÁGENES */
-.portada {
-  height: 300px;
-  width: 200px;
-  object-fit: cover;
-  margin: 0 auto;
-  border-radius: 4px;
-}
-
-#libros picture, 
-#libros img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
 .libro-card {
-  background: var(--color-card);
+  background: var(--color-light);
   border-radius: 15px;
-  box-shadow: 0 4px 15px var(--color-shadow);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: flex;
@@ -196,7 +177,7 @@ main {
 .card-img img {
   width: 100%;
   height: 320px;
-  object-fit: cover;
+  object-fit: cover; /* Evita que la imagen se deforme, recortándola si es necesario */
 }
 
 .card-body {
@@ -206,7 +187,7 @@ main {
 
 .card-body h3 {
   font-family: var(--font-secondary);
-  color: var(--color-primary);
+  color: var(--color-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -231,36 +212,127 @@ main {
   transform: scale(1.05);
 }
 
-/* ASIDE */
-aside {
-  flex: 1;
-  background: #eaeaea;
-  padding: 1rem;
+/* Video (Contenedor) */
+.video-container {
+  position: relative; /* Contenedor padre para el iframe posicionado absolutamente */
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporción 16:9 (9 / 16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+  position: absolute; /* Se ajusta al 'position: relative' del padre */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Ventana Modal */
+.modal {
+  display: none; /* Oculto por defecto, se activa con JS */
+  position: fixed; /* Se superpone a todo el contenido de la página */
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
   border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.4s; /* Aplica la animación 'fadeIn' al aparecer */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+/* Define la animación de entrada del modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Formulario de Login */
+#loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Apila los inputs y labels verticalmente */
+}
+
+#loginForm label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
   font-family: var(--font-secondary);
 }
 
-/* FOOTER */
-footer {
-  background: var(--color-dark);
-  color: var(--color-light);
-  text-align: center;
-  padding: 1rem;
+#loginForm input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
 }
 
-footer i {
-  margin: 10px;
-  font-size: 30px;
-  color: var(--color-light);
-}
-
-/* RESPONSIVO */
+/*Estilos Responsivos*/
 @media (max-width: 768px) {
+
+  /* Apila el contenido principal y el 'aside' en pantallas pequeñas */
   .contenido {
     flex-direction: column;
   }
 
+  /* Las tarjetas de libros ocupan 1 sola columna */
   .libros-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Muestra el botón de hamburguesa */
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+
+  /* Oculta el menú de navegación normal */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Clase que aplica JS para mostrar el menú desplegado */
+  .nav-links.active {
+    display: flex;
   }
 }

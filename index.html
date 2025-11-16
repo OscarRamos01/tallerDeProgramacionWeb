@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Librería Ramos</title>
   <meta name="description" content="Página web de libros.">
-
-  <!-- Tipografías externas -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
-    rel="stylesheet">
-
-  <!-- Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Mis Estilos -->
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="images/libros.png" alt="Logo Librería">
@@ -29,33 +20,34 @@
     <p class="slogan">Más que libros, un mundo de conocimiento</p>
   </header>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="catalog.html">Catálogo</a>
-    <a href="services.html">Servicios</a>
-    <a href="events.html">Eventos</a>
-    <a href="contact.html">Contáctenos</a>
+
+  <nav class="navbar">
+    <button class="menu-toggle" id="mobile-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#" onclick="abrirModal()">Suscríbete</a></li> 
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Eventos</a></li>
+    <li><a href="#">Contáctenos</a></li>
+    
+    <li><a href="#" onclick="abrirLoginModal()">Login</a></li>
+    
+    <li><a href="#">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
+</ul>
   </nav>
 
-  <!-- CONTENIDO -->
   <div class="contenido">
-    <!-- MAIN -->
     <main>
       <section class="novedades">
         <h2><img class="icom" src="images/librosColor.png" alt="Logo Librería"> Novedades</h2>
         <div class="card">
           <h3>El libro destacado del mes</h3>
-
           <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/YVvFjOLetE4?si=Su5KkVs_jWwrw1Ts" title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/YVvFjOLetE4?si=Su5KkVs_jWwrw1Ts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
-
         <div class="card">
           <h3>Promoción especial</h3>
           <p>50% de descuento en literatura clásica hasta fin de mes.</p>
@@ -64,98 +56,14 @@
 
       <section class="destacados">
         <h2><img class="icom" src="images/destacados.png" alt="icono destacados"> Libros Destacados</h2>
-        <div class="libros-grid">
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/don-quijote.webp" type="image/webp">
-                <source srcset="images/libros/don-quijote.jpg" type="image/jpeg">
-                <img src="images/libros/don-quijote.jpg" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>Don Quijote</h3>
-              <p>Don Quijote de la Mancha es una novela escrita por Miguel de Cervantes Saavedra, publicada en dos
-                partes (1605 y 1615)</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/html5-css5.webp" type="image/webp">
-                <source srcset="images/libros/html5-css5.gif" type="image/jpeg">
-                <img src="images/libros/html5-css5.gif" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>HTML5</h3>
-              <p>HTML5 es la versión más reciente del lenguaje de marcado HTML (HyperText Markup Language)</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/java.jpeg" type="image/jpeg">
-                <img src="images/libros/java.jpeg" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>Java</h3>
-              <p>Java es un lenguaje de programación orientado a objetos, creado por Sun Microsystems en 1995 (ahora
-                propiedad de Oracle)</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/mago-de-oz.webp" type="image/jpeg">
-                <source srcset="images/libros/mago-de-oz.jpeg" type="image/jpeg">
-                <img src="images/libros/java.jpeg" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>Mago de Oz</h3>
-              <p>Narra la historia de Dorothy, una niña que es llevada por un ciclón al mágico país de Oz</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/php-mysql.webp" type="image/jpeg">
-                <source srcset="images/libros/php-mysql.gif" type="image/jpeg">
-                <img src="images/libros/php-mysql.gif" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>PHP y MySQL</h3>
-              <p>PHP y MySQL son tecnologías muy utilizadas para el desarrollo web dinámico.</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
-          <div class="libro-card">
-            <div class="card-img">
-              <picture>
-                <source srcset="images/libros/viaje-centro-tierra.webp" type="image/jpeg">
-                <source srcset="images/libros/viaje-centro-tierra.jpg" type="image/jpeg">
-                <img src="images/libros/viaje-centro-tierra.jpg" alt="El Principito" loading="lazy">
-              </picture>
-            </div>
-            <div class="card-body">
-              <h3>Viaje al centro de la Tierra</h3>
-              <p>es una novela de aventuras y ciencia ficción que narra la expedición del profesor Otto Lidenbrock, su
-                sobrino Axel y su guía Hans hacia el interior del planeta.</p>
-              <button class="btn">Ver más</button>
-            </div>
-          </div>
+        
+        <div class="libros-grid" id="contenedor-libros">
+
         </div>
+
       </section>
     </main>
 
-    <!-- ASIDE -->
     <aside>
       <h3><img class="icom" src="images/categorias.png" alt="icono categorias"> Categorías</h3>
       <ul>
@@ -165,31 +73,53 @@
         <li>Infantil</li>
         <li>Autoayuda</li>
       </ul>
-
       <h3><img class="icom" src="images/calendario.png" alt="icono calendario"> Próximos eventos</h3>
       <p>Club de lectura: 15 de septiembre</p>
-      <p>Presentación de autor: 25 de septiembre</p>
-
       <h3><img class="icom" src="images/promociones.png" alt="icono promociones"> Promociones</h3>
       <p>2x1 en libros de misterio todos los viernes</p>
     </aside>
   </div>
 
-  <!-- FOOTER -->
+  <div id="miModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2>¡Únete a nuestro Club!</h2>
+      <p>Recibe noticias y descuentos exclusivos.</p>
+      <button class="btn" onclick="alert('¡Gracias por tu interés!')">Suscribirme</button>
+    </div>
+  </div>
+
+  </div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close" onclick="cerrarLoginModal()">&times;</span>
+    
+    <h2>Iniciar Sesión</h2>
+    
+    <form id="loginForm">
+      <label for="loginEmail">Correo Electrónico:</label>
+      <input type="email" id="loginEmail" required>
+      
+      <label for="loginPassword">Contraseña:</label>
+      <input type="password" id="loginPassword" required>
+      
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+
+  </div>
+</div>
+
   <footer>
     <p>&copy; 2025 Librería Ramos - Todos los derechos reservados</p>
-    <p><img class="icom" src="images/ubicacion.png" alt="icono ubicacion"> Arequipa, Perú |
-      <img class="icom" src="images/telefono.png" alt="icono telefono"> 958-999-999 |
-      <img class="icom" src="images/email.png" alt="icono email"> contacto@libreriaramos.com
-    </p>
+    <p>Arequipa, Perú | 958-999-999 | contacto@libreriaramos.com</p>
     <div class="social">
-      <i class="fa-brands fa-facebook"></i> |
-      <i class="fa-brands fa-instagram"></i> |
-      <i class="fa-brands fa-x-twitter"></i> |
-      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
     </div>
   </footer>
 
 </body>
-
 </html>
