@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     cargarLibros();
 
-    const menuToggle = document.getElementById('mobile-menu');
+    const menuToggle = document.getElementById('mobile-menu'); // hamburguesa
     const navLinks = document.getElementById('nav-links');
     
     menuToggle.addEventListener('click', function() {
