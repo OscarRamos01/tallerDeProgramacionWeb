@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Librería Ramos</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta name="description" content="Página web de libros.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles-noborrar.css">
+
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -18,79 +24,84 @@
   </header>
 
   <!-- NAV -->
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="catalog.html">Catálogo</a>
-    <a href="services.html">Servicios</a>
-    <a href="events.html">Eventos</a>
-    <a href="contact.html">Contáctenos</a>
+  <nav class="navbar">
+    <button class="menu-toggle" id="mobile-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#" onclick="abrirModal()">Suscríbete</a></li>
+      <li><a href="Services.html">Servicios</a></li>
+      <li><a href="events.html">Eventos</a></li>
+      <li><a href="contact.html">Contáctenos</a></li>
+      <li><a href="#" onclick="abrirLoginModal()">Login</a></li>
+      <li><a href="#">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
+    </ul>
   </nav>
 
   <!-- CONTENIDO -->
   <div class="contenido">
+
     <!-- MAIN -->
     <main>
       <section class="novedades">
         <h2><img class="icom" src="images/librosColor.png" alt="Logo Librería"> Contáctenos</h2>
       </section>
 
+      <!-- FORMULARIO CORREGIDO -->
+      <form id="form-contacto" class="formulario">
 
-<form>
-      <table>
-        <tr>
-          <td><label for="nombre">Nombre</label></td>
-          <td><input type="text" id="nombre" name="nombre" required></td>
-        </tr>
-        <tr>
-          <td><label for="correo">Correo electrónico</label></td>
-          <td><input type="email" id="correo" name="correo" required></td>
-        </tr>
-        <tr>
-          <td><label for="telefono">Teléfono (opcional)</label></td>
-          <td><input type="tel" id="telefono" name="telefono"></td>
-        </tr>
-        <tr>
-          <td><label for="motivo">Motivo de contacto</label></td>
-          <td>
-            <select id="motivo" name="motivo" required>
-              <option value="">Seleccione...</option>
-              <option value="consulta">Consulta sobre libros</option>
-              <option value="precios">Información de precios/promociones</option>
-              <option value="sugerencia">Sugerencia de títulos/autores</option>
-              <option value="eventos">Inscripción a eventos/talleres</option>
-              <option value="reclamo">Reclamos o sugerencias</option>
-              <option value="otro">Otro</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td><label for="mensaje">Mensaje</label></td>
-          <td><textarea id="mensaje" name="mensaje" required></textarea></td>
-        </tr>
-        <tr>
-          <td><label>Preferencia de contacto</label></td>
-          <td>
-            <select id="preferencia" name="preferencia" required>
-              <option value="">Seleccione...</option>
-              <option value="correo">Correo electrónico</option>
-              <option value="whatsapp">WhatsApp</option>
-              <option value="llamada">Llamada telefónica</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <div class="checkbox-group">
-              <input type="checkbox" id="boletin" name="boletin">
-              <label for="boletin">Quiero recibir novedades y promociones</label>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <button type="submit" class="submit-btn">Enviar</button>
-    </form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
 
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
 
+        <div class="form-group">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+
+        <div class="form-group">
+          <label for="motivo">Motivo de contacto</label>
+          <select id="motivo" name="motivo" required>
+            <option value="">Seleccione...</option>
+            <option value="consulta">Consulta sobre libros</option>
+            <option value="precios">Información de precios/promociones</option>
+            <option value="sugerencia">Sugerencia de títulos/autores</option>
+            <option value="eventos">Inscripción a eventos/talleres</option>
+            <option value="reclamo">Reclamos o sugerencias</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="preferencia">Preferencia de contacto</label>
+          <select id="preferencia" name="preferencia" required>
+            <option value="">Seleccione...</option>
+            <option value="correo">Correo electrónico</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="llamada">Llamada telefónica</option>
+          </select>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="boletin" name="boletin">
+          <label for="boletin">Quiero recibir novedades y promociones</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Enviar</button>
+
+      </form>
 
     </main>
 
@@ -110,22 +121,4 @@
       <p>Presentación de autor: 25 de septiembre</p>
 
       <h3><img class="icom" src="images/promociones.png" alt="icono promociones"> Promociones</h3>
-      <p>2x1 en libros de misterio todos los viernes</p>
-    </aside>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Librería Ramos - Todos los derechos reservados</p>
-    <p><img class="icom" src="images/ubicacion.png" alt="icono ubicacion"> Arequipa, Perú | 
-       <img class="icom" src="images/telefono.png" alt="icono telefono"> 958-999-999 | 
-       <img class="icom" src="images/email.png" alt="icono email"> contacto@libreriaramos.com</p>
-    <div class="social">
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <p>2x1 en libros de misterio todos los viernes</p

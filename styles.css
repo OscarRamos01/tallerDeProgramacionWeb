@@ -134,7 +134,7 @@ footer i {
 .nav-links a:hover {
   background: var(--color-accent);
 }
-
+/*hamburguesa */
 .menu-toggle {
   display: none; /* Oculto en PC, se muestra en móvil (ver sección 5) */
   background: none;
