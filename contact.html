@@ -9,12 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" type="text/css" href="styles-noborrar.css">
-
   <script src="script.js"></script>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="images/libros.png" alt="Logo Librería">
@@ -23,20 +21,22 @@
     <p class="slogan">Más que libros, un mundo de conocimiento</p>
   </header>
 
-  <!-- NAV -->
+<!--hamburguesa -->
   <nav class="navbar">
     <button class="menu-toggle" id="mobile-menu">
       <i class="fa-solid fa-bars"></i>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="#" onclick="abrirModal()">Suscríbete</a></li>
-      <li><a href="Services.html">Servicios</a></li>
-      <li><a href="events.html">Eventos</a></li>
-      <li><a href="contact.html">Contáctenos</a></li>
-      <li><a href="#" onclick="abrirLoginModal()">Login</a></li>
-      <li><a href="#">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
-    </ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#" onclick="abrirModal()">Suscríbete</a></li> 
+    <li><a href="Services.html">Servicios</a></li>
+    <li><a href="events.html">Eventos</a></li>
+    <li><a href="contact.html">Contáctenos</a></li>
+    
+    <li><a href="#" onclick="abrirLoginModal()">Login</a></li>
+    
+    <li><a href="#">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
+</ul>
   </nav>
 
   <!-- CONTENIDO -->
@@ -121,4 +121,51 @@
       <p>Presentación de autor: 25 de septiembre</p>
 
       <h3><img class="icom" src="images/promociones.png" alt="icono promociones"> Promociones</h3>
-      <p>2x1 en libros de misterio todos los viernes</p
+      <p>2x1 en libros de misterio todos los viernes</p>
+    </aside>
+    </div>
+
+
+      <div id="miModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2>¡Únete a nuestro Club!</h2>
+      <p>Recibe noticias y descuentos exclusivos.</p>
+      <button class="btn" onclick="alert('¡Gracias por tu interés!')">Suscribirme</button>
+    </div>
+  </div>
+
+  </div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close" onclick="cerrarLoginModal()">&times;</span>
+    
+    <h2>Iniciar Sesión</h2>
+    
+    <form id="loginForm">
+      <label for="loginEmail">Correo Electrónico:</label>
+      <input type="email" id="loginEmail" required>
+      
+      <label for="loginPassword">Contraseña:</label>
+      <input type="password" id="loginPassword" required>
+      
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+
+  </div>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Librería Ramos - Todos los derechos reservados</p>
+    <p>Arequipa, Perú | 958-999-999 | contacto@libreriaramos.com</p>
+    <div class="social">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+    </div>
+  </footer>
+
+</body>
+</html>

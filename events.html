@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="images/libros.png" alt="Logo Librería">
@@ -21,7 +20,7 @@
     <p class="slogan">Más que libros, un mundo de conocimiento</p>
   </header>
 
-  <!-- NAV -->
+<!--hamburguesa -->
   <nav class="navbar">
     <button class="menu-toggle" id="mobile-menu">
       <i class="fa-solid fa-bars"></i>
@@ -85,22 +84,58 @@
       <h3><img class="icom" src="images/promociones.png" alt="icono promociones"> Promociones</h3>
       <p>2x1 en libros de misterio todos los viernes</p>
     </aside>
+
+    <div id="miModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2>¡Únete a nuestro Club!</h2>
+      <p>Recibe noticias y descuentos exclusivos.</p>
+      <button class="btn" onclick="alert('¡Gracias por tu interés!')">Suscribirme</button>
+    </div>
   </div>
 
-  <!-- FOOTER -->
+  </div>
+
+<div id="miModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2>¡Únete a nuestro Club!</h2>
+      <p>Recibe noticias y descuentos exclusivos.</p>
+      <button class="btn" onclick="alert('¡Gracias por tu interés!')">Suscribirme</button>
+    </div>
+  </div>
+
+  </div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close" onclick="cerrarLoginModal()">&times;</span>
+    
+    <h2>Iniciar Sesión</h2>
+    
+    <form id="loginForm">
+      <label for="loginEmail">Correo Electrónico:</label>
+      <input type="email" id="loginEmail" required>
+      
+      <label for="loginPassword">Contraseña:</label>
+      <input type="password" id="loginPassword" required>
+      
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+
+  </div>
+</div>
+
   <footer>
     <p>&copy; 2025 Librería Ramos - Todos los derechos reservados</p>
-    <p><img class="icom" src="images/ubicacion.png" alt="icono ubicacion"> Arequipa, Perú |
-      <img class="icom" src="images/telefono.png" alt="icono telefono"> 958-999-999 |
-      <img class="icom" src="images/email.png" alt="icono email"> contacto@libreriaramos.com
-    </p>
+    <p>Arequipa, Perú | 958-999-999 | contacto@libreriaramos.com</p>
     <div class="social">
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
     </div>
   </footer>
 
 </body>
-
 </html>
